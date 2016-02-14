@@ -1,0 +1,48 @@
+---
+title       : Vehicle's stopping distance
+author      : DT
+job         : R student
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      #
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+# Computation of a vehicle's stopping distance
+
+---
+# What is a vehicle's stopping distance I
+
+<q>The meter's needed for a vehicle to reach to a full stop, when moving with a certain velocity under certain surface/road conditions</q>
+
+A vehicle's stopping distance is mainly proportional to the square of it's velocity
+and inversly proportional to the friction of the surface that it's moving.
+For dry surfaces/roads one should pick a higher value for the friction of coefficient,
+while a lower value of the coefficient denotes slippery surfaces/roads.
+
+---
+# What is a vehicle's stopping distance II
+
+One should readily find that the formula used for the calculations is of the form:
+```{r echo=FALSE}
+(Velocity*(1000/3600))^2 / (2*Coeff*9.81)
+```
+
+where as the Velocity of the vehicle is inserted in (km/h),
+Coeff is the coefficient of friction of the surface that the vehicle is moving (typical for rubber on dry surface is around 0.65-0.7),
+and g = 9.81 (m/s^2) is the accelaration of gravity.
+
+# Future improvements:
+- Based on the values of velocity and friction of coefficient, provide advice to the user for reducing the vehicle's stopping distance
+- Provide further options of calculating the stopping distance by providing options for the reaction of the driver
+
+---
+## Engaging the user
+- https://dtragoud.shinyapps.io/Stopping_Distance
+
+## Source code is available:
+- https://github.com/dtragoud/stopping_distance.git
+
+## Further reading:
+- https://en.wikipedia.org/wiki/Braking_distance
